@@ -1,0 +1,15 @@
+# Run outputs are generated artifacts and can be large. Keep the directory and
+# its docs; ignore the actual runs. Commit a specific run deliberately if you
+# want it under version control:  git add -f runs/<slug>/<date>
+runs/*/
+!runs/README.md
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
