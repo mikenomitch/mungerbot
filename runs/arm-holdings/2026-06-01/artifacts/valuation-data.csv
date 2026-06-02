@@ -1,0 +1,66 @@
+section,metric,value,unit,basis_or_source
+anchor,price_per_ads,408.85,USD,close 2026-06-01 (+15.73% day; prior close 353.29) stockanalysis.com
+anchor,shares_diluted_wtdavg_fy26,1068,millions,Arm 6-K FY2026
+anchor,market_cap,436.7,USD_bn,price x ~1.068B sh (stockanalysis 436.68)
+anchor,cash_plus_st_investments,3.601,USD_bn,Arm 6-K FY2026 (2.751 cash + 0.850 ST inv)
+anchor,total_debt,0.491,USD_bn,lease liabilities; 6-K reports no borrowings
+anchor,net_cash,3.11,USD_bn,computed
+anchor,enterprise_value,433.6,USD_bn,mktcap - net cash (stockanalysis 433.89)
+anchor,52wk_low,100.02,USD,stockanalysis.com
+anchor,52wk_high,421.69,USD,stockanalysis.com
+anchor,200day_ma,152.18,USD,stockanalysis.com
+fundamentals_fy26,revenue,4920,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,royalty_revenue,2613,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,license_other_revenue,2307,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,gaap_operating_income,900,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,gaap_net_income,904,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,gaap_diluted_eps,0.85,USD,Arm 6-K FY2026
+fundamentals_fy26,nongaap_operating_income,2115,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,nongaap_operating_margin,43.0,pct,Arm 6-K FY2026
+fundamentals_fy26,nongaap_net_income,1889,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,nongaap_diluted_eps,1.77,USD,Arm 6-K FY2026
+fundamentals_fy26,operating_cash_flow,1524,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,nongaap_free_cash_flow,882,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,stock_based_compensation,1052,USD_mn,Arm 6-K FY2026
+fundamentals_fy26,ebitda_approx,1060,USD_mn,stockanalysis.com
+fundamentals_fy25,revenue,4007,USD_mn,Arm 6-K FY2026 (prior-yr column)
+fundamentals_fy25,gaap_net_income,792,USD_mn,Arm 6-K FY2026
+fundamentals_fy25,gaap_diluted_eps,0.75,USD,Arm 6-K FY2026
+fundamentals_fy25,nongaap_diluted_eps,1.63,USD,Arm 6-K FY2026
+fundamentals_fy25,nongaap_operating_margin,46.7,pct,Arm 6-K FY2026
+guidance,q1_fy27_revenue_mid,1260,USD_mn,Arm 6-K FY2026 (±50)
+guidance,q1_fy27_nongaap_eps_mid,0.40,USD,Arm 6-K FY2026 (±0.04)
+guidance,q1_fy27_nongaap_opex,760,USD_mn,Arm 6-K FY2026
+guidance,fy2031_target_revenue,25,USD_bn,Arm Q4 FY26 slides (15 AGI-CPU + 10 IP)
+guidance,fy2031_target_nongaap_eps,9.0,USD,Arm Q4 FY26 slides (">$9")
+multiple_now,pe_gaap_ttm,481,x,408.85/0.85
+multiple_now,pe_nongaap_ttm,231,x,408.85/1.77
+multiple_now,forward_pe_fy27_nongaap,163,x,stockanalysis.com consensus
+multiple_now,ev_sales,88,x,433.6/4.92
+multiple_now,ev_ebitda,409,x,433.6/1.06
+multiple_now,ev_ebit_gaap,482,x,433.6/0.90
+multiple_now,ev_ebit_nongaap,205,x,433.6/2.115
+multiple_now,price_ocf,287,x,436.7/1.524
+multiple_now,price_fcf_nongaap,495,x,436.7/0.882
+multiple_now,price_book,45,x,stockanalysis.com
+own_history,pe_3yr_avg,319,x,fullratio/financecharts (Q4-23 to 2026)
+own_history,pe_post_ipo_low,142,x,Q1-CY2025
+own_history,pe_post_ipo_high,1073,x,Q4-CY2023 (EPS ~0.07)
+peer,nvda_forward_pe,21,x,stockanalysis.com May-2026
+peer,nvda_ev_ebitda,32,x,stockanalysis.com May-2026
+peer,amd_forward_pe_range,32-58,x,secondary mid-2026
+peer,avgo_forward_pe_range,33-38,x,secondary mid-2026
+reverse_dcf,implied_growth_to_justify_ev,"~35-40% FCF CAGR for 15y",judgment,FCF0 1.0B WACC 11.5% term 3%
+reverse_dcf,mgmt_target_exit_pe_for_11.5pct_return,76,x,$9 FY31 EPS discounted 5y
+reverse_dcf,implied_fy31_nongaap_eps_at_30x_exit,22.8,USD,for 11.5%/yr from 408.85
+dcf_bear,value_per_share,13,USD,FCF0 0.7B 15->4% WACC13% gT2.5%
+dcf_base,value_per_share,31,USD,FCF0 1.0B 25->6% WACC11.5% gT3.0%
+dcf_bull,value_per_share,121,USD,FCF0 1.8B 35->10% WACC10% gT4.0%
+exitmult_base,value_per_share,132,USD,$6.5 FY31 nongaap EPS x 35x disc 11.5%
+exitmult_bull,value_per_share,235,USD,$9 FY31 nongaap EPS x 45x disc 11.5%
+conclusion,intrinsic_value_range_low,30,USD,blended methods
+conclusion,intrinsic_value_range_high,235,USD,blended methods (bull ceiling)
+conclusion,intrinsic_value_midpoint,130,USD,rough
+conclusion,current_price,408.85,USD,2026-06-01 close
+conclusion,margin_of_safety_at_midpoint,-68,pct,(130-408.85)/408.85
+conclusion,margin_of_safety_at_bull_ceiling,-43,pct,(235-408.85)/408.85

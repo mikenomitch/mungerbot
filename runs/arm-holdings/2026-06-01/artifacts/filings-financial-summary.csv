@@ -1,0 +1,28 @@
+metric,FY2023,FY2024,FY2025,FY2026,unit,source
+fiscal_year_end,2023-03-31,2024-03-31,2025-03-31,2026-03-31,date,20-F FY2026 (filed 2026-05-26)
+total_revenue,2679,3233,4007,4920,USD_millions,20-F FY2026 Note 4 / XBRL
+license_and_other_revenue,1431,1431,1839,2307,USD_millions,20-F FY2026 Note 4 (FY23 not split in Note 4 table; total only)
+royalty_revenue,1248,1802,2168,2613,USD_millions,20-F FY2026 Note 4 (FY23 implied = total 2679 - L&O)
+revenue_external_customers,,2509,3184,3421,USD_millions,20-F FY2026 Note 4
+revenue_related_parties,,724,823,1499,USD_millions,20-F FY2026 Note 4
+related_party_pct_of_total,,22.4,20.5,30.5,percent,computed from Note 4
+gross_profit,2573,3079,3886,4799,USD_millions,XBRL companyfacts
+cost_of_revenue,106,154,121,121,USD_millions,XBRL companyfacts
+rnd_expense,1133,1979,2071,2776,USD_millions,XBRL / 20-F MD&A
+operating_income,671,111,831,900,USD_millions,XBRL / 20-F Note 21 segment
+operating_margin_pct,25,3,21,18,percent,20-F FY2026 Note 21
+share_based_comp_equity_settled,,1037,820,1052,USD_millions,20-F FY2026 Note 21
+net_income,524,306,792,904,USD_millions,XBRL companyfacts
+diluted_eps_usd,0.51,0.29,0.75,0.85,USD_per_share,XBRL companyfacts
+diluted_wtd_avg_shares,1028,1044,1063,1068,millions,XBRL companyfacts
+shares_outstanding_yearend,1025.2,1040,1057,1064,millions,XBRL companyfacts
+operating_cash_flow,739,1090,397,1524,USD_millions,XBRL companyfacts
+cash_and_equivalents,1554,1923,2085,2751,USD_millions,XBRL companyfacts
+short_term_investments,,,,850,USD_millions,20-F FY2026 MD&A liquidity
+total_assets,6866,7927,8932,10703,USD_millions,XBRL companyfacts
+total_liabilities,2815,2632,2093,2417,USD_millions,XBRL companyfacts
+stockholders_equity,4051,5295,6839,8286,USD_millions,XBRL companyfacts
+total_debt,,,,~0,USD_millions,net-cash balance sheet; debt negligible (no LT debt concept in XBRL)
+amount_due_from_arm_china,,,284.6,276.2,USD_millions,20-F FY2026 Note 20
+contract_asset_softbank_affiliate,,,145.5,645.8,USD_millions,20-F FY2026 Note 20 (unbilled)
+noncancelable_purchase_obligations,,,,1056.5,USD_millions,20-F FY2026 Note (through 2036)
