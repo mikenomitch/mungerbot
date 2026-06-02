@@ -1,0 +1,61 @@
+section,line_item,low,high,unit,source,asof
+snapshot,price_close,4.18,4.18,USD/sh,stockanalysis.com,2026-06-01
+snapshot,market_cap,36.6,36.8,USD_millions,computed/aggregator,2026-06-01
+snapshot,class_A_shares,6.220796,6.220796,millions,DEFM14A cover,2026-04-13
+snapshot,class_B_shares,2.540381,2.540381,millions,DEFM14A cover,2026-04-13
+snapshot,total_shares,8.761177,8.761177,millions,A+B,2026-06-01
+snapshot,fully_diluted_shares,9.195,9.195,millions,DEFM14A D&P table,2026-05-31
+snapshot,cash,14.40,14.40,USD_millions,10-Q/XBRL,2026-03-31
+snapshot,term_loan_ABL,18.9,18.9,USD_millions,DEFM14A liq table,2026-05-31
+snapshot,stockholders_equity,16.28,16.28,USD_millions,XBRL,2026-03-31
+snapshot,book_value_per_share,1.86,1.86,USD/sh,computed,2026-03-31
+cash_trend,cash_2024-12-31,66.732,66.732,USD_millions,XBRL,2024-12-31
+cash_trend,cash_2025-03-31,39.056,39.056,USD_millions,XBRL,2025-03-31
+cash_trend,cash_2025-06-30,33.144,33.144,USD_millions,XBRL,2025-06-30
+cash_trend,cash_2025-09-30,23.704,23.704,USD_millions,XBRL,2025-09-30
+cash_trend,cash_2025-12-31,26.690,26.690,USD_millions,XBRL,2025-12-31
+cash_trend,cash_2026-03-31,14.397,14.397,USD_millions,XBRL,2026-03-31
+asset_sale,purchase_price,39.0,39.0,USD_millions,DEFM14A,2026-03-29
+asset_sale,net_proceeds,35.0,36.2,USD_millions,DEFM14A,2026-05-08
+dp_liquidation,cash,3.1,3.1,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,IP_assets,30.0,40.0,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,accounts_receivable,2.6,3.3,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,inventory,23.6,27.5,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,prepaid_other,5.1,7.1,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,PPE,0.8,0.8,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,accounts_payable,-23.8,-23.8,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,accrued_other_liab,-7.8,-7.8,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,deferred_revenue,-1.5,-1.5,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,term_loan_ABL,-18.9,-18.9,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,employee_severance,-3.5,-3.5,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,lease_breakage,-0.6,-0.6,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,other_contract_breakage,-3.0,-3.0,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,litigation_costs,-0.5,-0.5,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,advisor_expenses,-5.4,-5.4,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,net_liquidation_value,0.2,16.9,USD_millions,DEFM14A D&P,2026-05-31
+dp_liquidation,proceeds_per_share,0.02,1.83,USD/sh,DEFM14A D&P,2026-05-31
+external_bid,AEG_whole_company,2.00,2.25,USD/sh,DEFM14A background,2026-02-24
+external_bid,IP_only_other_party,30.0,40.0,USD_millions,DEFM14A background,2026-03-05
+dilution_at_2.988,notes_3.25M_total_classA,7.308480,7.308480,millions,DEFM14A p82,2026-05-08
+dilution_at_2.988,notes_5.25M_total_classA,7.977824,7.977824,millions,DEFM14A p82,2026-05-08
+dilution_at_2.988,notes_10M_total_classA,9.567516,9.567516,millions,DEFM14A p82,2026-05-08
+dilution_at_2.988,notes_25M_total_classA,14.587597,14.587597,millions,DEFM14A p82,2026-05-08
+dilution_at_2.988,notes_50M_total_classA,22.954397,22.954397,millions,DEFM14A p82,2026-05-08
+dilution_at_2.988,notes_50M_investor_pct,72.90,72.90,percent,DEFM14A p82,2026-05-08
+multiples,PE_ttm,,,n/m_negative,FY25 loss ~77.3M,2026-06-01
+multiples,EV_EBIT,,,n/m_negative,operating losses,2026-06-01
+multiples,EV_FCF,,,n/m_negative,cash burn,2026-06-01
+multiples,P_B,2.3,2.3,x,computed 4.18/1.86,2026-06-01
+multiples,EV_rough,41,41,USD_millions,mktcap+ABL-cash,2026-06-01
+conclusion,intrinsic_value_range,0.50,2.25,USD/sh,triangulated,2026-06-01
+conclusion,prob_weighted_value,1.55,1.55,USD/sh,scenario,2026-06-01
+conclusion,current_price,4.18,4.18,USD/sh,stockanalysis,2026-06-01
+conclusion,margin_of_safety_midpoint,-199,-199,percent,1.40 vs 4.18,2026-06-01
+conclusion,margin_of_safety_bestcase,-86,-86,percent,2.25 vs 4.18,2026-06-01
+convertible,facility_total,50.0,50.0,USD_millions,8-K,2026-04-14
+convertible,committed,5.25,5.25,USD_millions,8-K,2026-04-14
+convertible,issued_initial,3.25,3.25,USD_millions,8-K,2026-04-14
+convertible,coupon,12.0,12.0,percent,8-K,2026-04-14
+convertible,OID,5.0,5.0,percent,8-K,2026-04-14
+convertible,alt_conversion_vwap_pct,93,93,percent,8-K,2026-04-14
+convertible,GPU_lease_qumulusai,2.75,2.75,USD_millions,8-K/DEFM14A,2026-04-14

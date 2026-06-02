@@ -1,0 +1,14 @@
+{
+  "agent": "red-team",
+  "phase": "synthesis",
+  "status": "complete",
+  "company": "Allbirds, Inc.",
+  "ticker": "BIRD",
+  "asOfDate": "2026-06-01",
+  "survives": false,
+  "circleOfCompetence": "edge",
+  "output": "runs/allbirds/2026-06-01/synthesis/RED-TEAM.md",
+  "killScenarioCount": 7,
+  "liveHighPlausibilitySevereOrRuin": true,
+  "redTeamPath": "runs/allbirds/2026-06-01/synthesis/RED-TEAM.md"
+}

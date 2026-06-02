@@ -1,0 +1,38 @@
+{
+  "agent": "intake",
+  "phase": "Intake",
+  "status": "DONE",
+  "asOf": "2026-06-01",
+  "tier": "standard",
+  "company": "Allbirds, Inc.",
+  "ticker": "BIRD",
+  "exchange": "Nasdaq Global Select Market",
+  "currency": "USD",
+  "fiscalYearEnd": "12-31",
+  "cik": "0001653909",
+  "headline": "Resolved Allbirds, Inc. (BIRD, Nasdaq, USD). Footwear assets being sold to American Exchange Group (~$39M, DEFM14A 2026-05-08); company pivoting to AI/GPU compute (rename 'NewBird AI'). Legacy footwear should be treated as discontinued.",
+  "outputs": [
+    "RUN.md",
+    "PROGRESS.md",
+    "research/_snapshot.md"
+  ],
+  "researchLanes": [
+    "filings",
+    "financials",
+    "valuation",
+    "news",
+    "leadership",
+    "competition",
+    "sector",
+    "prediction-markets"
+  ],
+  "modelCount": 42,
+  "flags": [
+    "in-flight footwear asset sale to American Exchange Group (~$39M, expected Q2 2026 close)",
+    "pivot to AI/GPU compute infrastructure, rename to NewBird AI (~$50M convertible facility)",
+    "1-for-20 reverse split effective 2024-09-05 (Nasdaq bid-price compliance)",
+    "dual-class: only Class A (BIRD) is listed",
+    "net cash / EV not yet computed — pro-forma after sale + convertible (financials/valuation lanes)"
+  ],
+  "ts": "2026-06-01"
+}

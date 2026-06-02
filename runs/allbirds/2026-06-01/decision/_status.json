@@ -1,0 +1,32 @@
+{
+  "agent": "decision",
+  "phase": "Decision",
+  "status": "DONE",
+  "asOf": "2026-06-01",
+  "tier": "standard",
+  "company": "Allbirds, Inc.",
+  "ticker": "BIRD",
+  "decision": "PASS",
+  "decisionDetail": "PASS (SELL-if-held); explicitly NOT a short",
+  "conviction": 9,
+  "circleOfCompetence": "edge",
+  "qualityScore": 1,
+  "currentPrice": 4.18,
+  "intrinsicValueLow": 0.5,
+  "intrinsicValueHigh": 2.25,
+  "intrinsicValueProbWeighted": 1.55,
+  "marginOfSafetyPct": -63,
+  "gates": {
+    "circleOfCompetence": false,
+    "noFatalFlaw": false,
+    "quality": false,
+    "marginOfSafety": false,
+    "convergence": false
+  },
+  "fatalFlaws": ["inversion: price $4.18 above $1.83 fairness ceiling and $2.25 whole-company bid; base case ~63-67% permanent loss, junior to a death-spiral convertible"],
+  "lollapalooza": "negative",
+  "deterministicCheck": "PASS (heldPosition=false); SELL when heldPosition=true",
+  "outputs": ["ANALYSIS.md (BLOCKED by harness — content returned to orchestrator as text)"],
+  "note": "Harness blocked writing ANALYSIS.md and PROGRESS.md update from this subagent ('subagents return findings as text'). Full ANALYSIS.md content and PROGRESS.md edits delivered in the agent's final message for the orchestrator to persist.",
+  "ts": "2026-06-01"
+}
