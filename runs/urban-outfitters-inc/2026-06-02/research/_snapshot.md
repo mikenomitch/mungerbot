@@ -1,0 +1,27 @@
+# Market Snapshot — Urban Outfitters, Inc. (URBN)
+
+**As-of:** 2026-06-02 (figures gathered from late-May 2026 data points and the Q1 FY2027 release; treat as approximate, to be confirmed by the financials/valuation lanes)
+
+| Metric | Value | Notes / Source |
+|---|---|---|
+| Last price | ~$73 / share | Range across late-May data points: $71.67 close on 2026-05-20 (day of Q1 results), ~$74.85 on 2026-05-28. Confirm a clean 2026-06-02 close. [stockanalysis.com](https://stockanalysis.com/stocks/urbn/), [stocktitan.net](https://www.stocktitan.net/overview/URBN/) |
+| Shares outstanding | ~85.6M–89.7M | Diluted weighted-average **88,801,846** for Q1 FY2027 (qtr ended 2026-04-30). FY2026 10-K cover reported **89,698,222** issued & outstanding; some quote sites show ~85.6M (likely net of treasury / a later count after buybacks). Confirm exact basic & diluted counts from the latest 10-Q. [globenewswire.com (Q1 release)](https://www.globenewswire.com/news-release/2026/05/20/3298859/4732/en/URBN-Reports-Record-Q1-Sales-and-Income.html), [SEC FY2026 10-K](https://www.sec.gov/Archives/edgar/data/912615/000119312526138040/urbn_fy26_10-k_-_ars.pdf) |
+| Market capitalization | ~$6.3B–$6.5B | ~$6.4B cited late May 2026 (≈ $74.85 × ~85.6M). On a fully diluted ~89M share count at ~$73 ⇒ ~$6.5B. Order of magnitude: low-to-mid $6B. [public.com](https://public.com/stocks/urbn/market-cap), [stocktitan.net](https://www.stocktitan.net/overview/URBN/) |
+| Cash & equivalents | $301.4M | As of 2026-04-30 (Q1 FY2027). [stocktitan.net (Q1 release)](https://www.stocktitan.net/news/URBN/urbn-reports-record-q1-sales-and-tavsk4s9zgl7.html) |
+| Marketable securities | $349.5M | $112.0M current + $237.5M non-current, as of 2026-04-30. [stocktitan.net (Q1 release)](https://www.stocktitan.net/news/URBN/urbn-reports-record-q1-sales-and-tavsk4s9zgl7.html) |
+| Total cash + investments | ~$650.9M | Cash $301.4M + marketable securities $349.5M, as of 2026-04-30. |
+| Funded debt | $0 (debt-free) | No long-term borrowings reported; URBN has historically run a debt-free balance sheet. [stocktitan.net (Q1 release)](https://www.stocktitan.net/news/URBN/urbn-reports-record-q1-sales-and-tavsk4s9zgl7.html) |
+| Operating lease liabilities | ~$1,204.6M | $225.0M current + $979.6M non-current, as of 2026-04-30. Large vs. funded debt; material to a lease-adjusted EV and fixed-charge coverage. [stocktitan.net (Q1 release)](https://www.stocktitan.net/news/URBN/urbn-reports-record-q1-sales-and-tavsk4s9zgl7.html) |
+| Net cash (ex-leases) | ~+$651M net cash | Cash & investments materially exceed funded debt (which is zero). URBN runs a net-cash balance sheet on a funded-debt basis. |
+| Enterprise value | ~$5.7B–$5.9B (ex-leases) | ≈ market cap (~$6.4B) − net cash (~$0.65B). **Including ~$1.2B operating-lease liabilities**, a lease-adjusted EV is ~$6.9B–$7.1B. Compute precisely in the valuation lane. |
+
+## Recent operating data point (for anchoring valuation)
+- **Q1 FY2027 (three months ended 2026-04-30, reported 2026-05-20):** record net sales **$1.48B, +11.4% YoY**; record net income **$115.7M**; diluted EPS **$1.30**. Seventh consecutive quarter of record sales and profits. Segment color: Retail net sales +8.0% (comp Retail +5.6%); Subscription (Nuuly) +34.5% on +33.3% average active subscribers; Wholesale +24.8%. [globenewswire.com](https://www.globenewswire.com/news-release/2026/05/20/3298859/4732/en/URBN-Reports-Record-Q1-Sales-and-Income.html), [stocktitan.net](https://www.stocktitan.net/news/URBN/urbn-reports-record-q1-sales-and-tavsk4s9zgl7.html)
+
+## Context flags for downstream lanes
+- **Valuation looks modest on trailing earnings — the question is durability, not price.** A ~$6.4B market cap against a business earning ~$1.30 diluted EPS in a single record quarter implies a low-to-mid-teens trailing P/E — cheap for a grower *if* earnings hold. The central risk is **fashion cyclicality / extrapolation**: seven straight record quarters invites trend-following. The valuation, earnings-quality, and regression-to-mean lanes should foreground whether peak margins and the Nuuly growth ramp are durable. The "default is PASS / Buy must be earned" discipline applies — but here it cuts toward demanding evidence of *durability*, not a high-multiple haircut.
+- **Leases dominate the "debt" picture.** Zero funded debt but ~$1.2B operating-lease liabilities from the store fleet. EV, coverage, and downside scenarios must be computed on a lease-adjusted basis; a pure ex-lease net-cash framing understates fixed obligations.
+- **Three distinct economic engines.** Retail (mature, fashion-driven brands), Wholesale (Free People), and Subscription (Nuuly, fast-growing but capital/inventory-intensive rental economics). The financials lane should segment revenue, margins, and capital intensity; Nuuly's unit economics and lifetime-value math deserve their own scrutiny.
+- **Share count needs cleanup.** Quote-site share counts (~85.6M) differ from the 10-K cover (~89.7M) and Q1 diluted weighted-average (~88.8M), likely reflecting active buybacks and treasury timing. Pin basic, diluted, and post-buyback counts from the latest 10-Q before finalizing market cap / EV.
+
+_All figures above are quick-look approximations from secondary sources and the Q1 FY2027 press release for anchoring only. Primary filings (FY2026 10-K for year ending 2026-01-31, and the Q1 FY2027 10-Q for the quarter ending 2026-04-30) govern._

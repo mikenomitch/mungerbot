@@ -1,0 +1,26 @@
+# URBN Beneficial Ownership, as of 2026-03-11 (directors/officers) and per latest 13D/G (institutions)
+# Source: URBN DEF 14A (proxy), Principal Shareholders & Management Ownership section,
+#   https://www.sec.gov/Archives/edgar/data/912615/000119312526137990/d42640ddef14a.htm
+# Percentages calculated on 88,423,626 shares outstanding as of 2026-03-11 (per proxy).
+# NOTE ON DOUBLE-COUNTING: Cherken's 9.9% is held almost entirely as CO-TRUSTEE of Hayne family
+#   trusts (3,791,991 co-trustee w/ D. Hayne; 4,424,347 co-trustee w/ M. Hayne) and overlaps with
+#   M. Hayne's reported holdings. R. Hayne EXCLUDES (disclaims) his spouse's 5,750,836 shares.
+#   Do NOT simply sum these rows to get family control; group total (15 persons) = 32.1% is the clean figure.
+Holder,Type,Shares,PctOutstanding,Notes
+Richard A. Hayne,Insider (Chairman/CEco-founder),17693578,20.0,"Incl 35,140 Hayne Foundation; 185,573 family trusts; 23,480 401(k). EXCLUDES spouse's 5,750,836 (disclaimed)."
+Harry S. Cherken Jr.,Insider (Director; ex-Faegre Drinker real-estate partner),8717953,9.9,"Almost entirely as CO-TRUSTEE of Hayne family trusts (overlaps M. Hayne). Personal stake minimal."
+Margaret A. Hayne,Insider (Co-President/CCO; R. Hayne's spouse),5750836,6.5,"Incl 4,531,127 in four family trusts (Cherken co-trustee of two); 11,300 401(k)."
+David A. Hayne,5%+ holder (R. Hayne's son; CTO & President of Nuuly),4521587,5.11,"Per Schedule 13D filed 2026-02-18. Sole voting 676,206; shared voting 3,688,148."
+BlackRock Inc.,Institution,8018860,9.07,"Per 13G/A filed 2025-10-17. Sole voting 7,887,311."
+FMR LLC (Fidelity),Institution,4916110.59,5.56,"Per 13G filed 2025-11-05. Sole voting 4,797,917."
+Sheila B. Harrington,Insider (Global CEO UO/FP),292653,0.33,Less than 1% (proxy marks *).
+Francis J. Conforti,Insider (Co-President/COO),81537,0.09,Less than 1%.
+Edward N. Antoian,Insider (Director / Lead Director),68537,0.08,"Incl 20,000 exercisable options. Less than 1%."
+Todd R. Morgenfeld,Insider (Director),27450,0.03,Less than 1%.
+Melanie Marein-Efron,Insider (CFO),22059,0.02,Less than 1%.
+Amin N. Maredia,Insider (Director),19150,0.02,Less than 1%.
+John C. Mulliken,Insider (Director),19150,0.02,Less than 1%.
+Wesley S. McDonald,Insider (Director),15250,0.02,Less than 1%.
+Mary C. Egan,Insider (Director),14250,0.02,Less than 1%.
+Kelly Campbell,Insider (Director),8450,0.01,Less than 1%.
+All directors/nominees/executive officers as a group (15 persons),Insider group,28413493,32.1,"Incl 20,000 exercisable options. Clean aggregate insider control figure."

@@ -1,0 +1,49 @@
+# URBN Valuation — reproducible calcs (as-of 2026-06-02). Run: python3 valuation-calcs.txt
+# Pure stdlib (no scipy). Sources cited in artifacts/valuation.md and research/valuation/NOTES.md.
+
+price = 72.26; shares = 85.60; mkt_cap = price*shares
+cash=301.364; mkt_sec=111.978+237.471; total_cash_inv=cash+mkt_sec; net_cash=total_cash_inv
+op_lease=225.005+979.600; funded_debt=0.0
+ev_exlease=mkt_cap-total_cash_inv+funded_debt
+ev_leaseadj=ev_exlease+op_lease
+ttm_rev=6317.0; ttm_ebit=617.09; ttm_ni=472.28; ttm_eps=5.21; ttm_ocf=557.64; ttm_capex=407.25
+ttm_fcf=ttm_ocf-ttm_capex; equity=2610.610; bvps=equity/shares
+
+print(f"Mkt cap {mkt_cap:,.0f}  EV(ex-lease) {ev_exlease:,.0f}  EV(lease-adj) {ev_leaseadj:,.0f}  net cash/sh {net_cash/shares:.2f}")
+print(f"P/E {price/ttm_eps:.1f}  EV/EBIT(exL) {ev_exlease/ttm_ebit:.1f}  EV/EBITDA(exL) {ev_exlease/(ttm_ebit+150):.1f}  P/B {price/bvps:.2f}")
+print(f"EV/FCF TTM {ev_exlease/ttm_fcf:.1f}  EV/FCF norm$300M {ev_exlease/300:.1f}")
+
+def fcfe_dcf(fcf0,g1,term_g,ke,nc,hi=5,fade=5):
+    pv=0.0; fcf=fcf0
+    for t in range(1,hi+1): fcf*=(1+g1); pv+=fcf/(1+ke)**t
+    last=fcf
+    for i in range(1,fade+1):
+        gg=g1+(term_g-g1)*i/fade; last*=(1+gg); pv+=last/(1+ke)**(hi+i)
+    tv=last*(1+term_g)/(ke-term_g); pv+=tv/(1+ke)**(hi+fade)
+    return pv+nc
+
+def solve_g(fcf0,ke,term_g,target,nc):
+    lo,hi=-0.2,0.4
+    for _ in range(100):
+        m=(lo+hi)/2
+        if fcfe_dcf(fcf0,m,term_g,ke,nc)>target: hi=m
+        else: lo=m
+    return m
+
+print("\nReverse DCF implied 5yr growth (ke10% termg2.5%):")
+for f in [300,320,350,400,450]:
+    print(f"  FCFE0 {f}: {solve_g(f,0.10,0.025,mkt_cap,net_cash)*100:.1f}%")
+
+print("\n3-scenario FCFE DCF ($/sh):")
+for nm,f,g,tg,ke in [("Bear",300,0.00,0.020,0.105),("Base",340,0.06,0.025,0.10),("Bull",380,0.09,0.030,0.095)]:
+    v=fcfe_dcf(f,g,tg,ke,net_cash)/shares
+    print(f"  {nm}: {v:.0f}/sh ({(v/price-1)*100:+.0f}%)")
+
+print("\nSensitivity grid Base (FCFE0 340, g1 6%) $/sh:")
+for ke in [0.09,0.10,0.11]:
+    row=[f"{fcfe_dcf(340,0.06,tg,ke,net_cash)/shares:.0f}" for tg in [0.020,0.025,0.030]]
+    print(f"  ke {ke*100:.0f}%: termg2.0={row[0]} 2.5={row[1]} 3.0={row[2]}")
+
+print("\nExit-P/E cross-check ($/sh PV@10%):")
+for nm,g,pe in [("Bear",0.02,11),("Base",0.07,13),("Bull",0.11,15)]:
+    e5=ttm_eps*(1+g)**5; print(f"  {nm}: EPS5 {e5:.2f} x{pe} = {e5*pe:.0f} -> PV {e5*pe/1.10**5:.0f}")
