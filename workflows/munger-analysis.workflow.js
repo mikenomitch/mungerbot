@@ -27,22 +27,26 @@ export const meta = {
 //     thesis:   string   (optional)  a prior thesis to stress-test (enables SELL logic)
 //   }
 // ---------------------------------------------------------------------------
-const company = args?.company
-const date = args?.date
+// `args` may arrive as a real object or, depending on how the orchestrating tool
+// call encodes it, as a JSON-encoded string. Normalize to an object so the
+// workflow is robust to both forms (and to args being omitted entirely).
+const ARGS = (typeof args === 'string' ? JSON.parse(args) : args) ?? {}
+const company = ARGS.company
+const date = ARGS.date
 if (!company || !date) {
   throw new Error(
     'munger-analysis requires args.company and args.date ("YYYY-MM-DD"). ' +
       'Date must be passed in because workflow scripts cannot read the system clock.',
   )
 }
-const ticker = args?.ticker ?? ''
-const tier = args?.tier ?? 'standard'
-const priorThesis = args?.thesis ?? ''
+const ticker = ARGS.ticker ?? ''
+const tier = ARGS.tier ?? 'standard'
+const priorThesis = ARGS.thesis ?? ''
 const slug = company
   .toLowerCase()
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-+|-+$/g, '')
-const runDir = args?.runDir ?? `runs/${slug}/${date}`
+const runDir = ARGS.runDir ?? `runs/${slug}/${date}`
 const label = ticker ? `${company} (${ticker})` : company
 
 // ---------------------------------------------------------------------------
@@ -140,7 +144,7 @@ const MODELS = [
 // more readily.
 // ---------------------------------------------------------------------------
 const desk = RESEARCH_DESK.filter((r) => r.tiers.includes(tier))
-let models = (args?.models ?? MODELS)
+let models = (ARGS.models ?? MODELS)
 if (tier === 'quick') {
   // Marquee, highest-leverage models only.
   const quickKeys = new Set([

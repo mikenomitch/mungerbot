@@ -1,0 +1,20 @@
+{
+  "agent": "synthesis",
+  "phase": "Synthesis",
+  "status": "DONE",
+  "asOf": "2026-06-01",
+  "company": "Allbirds, Inc.",
+  "ticker": "BIRD",
+  "netSignal": "negative",
+  "bullCount": 0,
+  "bearCount": 37,
+  "mixedCount": 5,
+  "modelsTotal": 42,
+  "negativeWeightShare": 0.939,
+  "fatalFlaws": ["inversion"],
+  "lollapalooza": { "present": true, "direction": "negative" },
+  "convergence": "29 strong-negative models spanning all 7 disciplines; 0 positive",
+  "outputs": ["synthesis/SYNTHESIS.md"],
+  "synthesisPath": "runs/allbirds/2026-06-01/synthesis/SYNTHESIS.md",
+  "ts": "2026-06-01"
+}
