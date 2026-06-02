@@ -1,5 +1,6 @@
 <!--
-  Top-level deliverable for a run. The Decision agent fills this in.
+  Top-level deliverable for a run. The Analysis Scribe fills this in from the
+  Decision agent's verdict (plus SYNTHESIS.md and RED-TEAM.md).
   It must stand alone: a reader who sees only this file should understand the
   business, the call, and exactly why. Replace every <placeholder>.
 -->

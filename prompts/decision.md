@@ -25,7 +25,7 @@ attempt to kill the thesis. Your discipline is the discipline of the rubric:
    node config/decision-rubric.js --json '{"circleOfCompetence":"in","fatalFlaws":0,"qualityScore":8,"marginOfSafetyPct":35,"strongPositiveModels":7,"disciplinesConverging":4,"lollapalooza":"positive","dossierConfidence":4,"conviction":8,"heldPosition":false}'
    ```
    If your judgment and the function disagree, **the divergence is a finding** —
-   explain it in `ANALYSIS.md` (usually the function is right about the gate
+   record it in your `summary` — it will surface in `ANALYSIS.md` (usually the function is right about the gate
    mechanics, and you must either fix your inputs or justify an override with
    strong reasoning).
 
@@ -41,21 +41,29 @@ attempt to kill the thesis. Your discipline is the discipline of the rubric:
 5. **Set conviction (0–10)** per the rubric — it is *not* an average of model
    scores. Reserve 9–10 for a genuine fat pitch.
 
-## Write the deliverable
+## Hand off the verdict
 
-Create the top-level `<runDir>/ANALYSIS.md` from `templates/ANALYSIS.template.md`.
-It must stand on its own for a reader who sees nothing else:
-- The decision, conviction, and a one-line thesis up top.
-- The bull thesis **and** the inverted/bear case (from the Red Team), side by side.
-- The model scorecard (link to `synthesis/SYNTHESIS.md`).
-- Valuation and margin of safety with the intrinsic-value range and method.
-- The gates table with pass/fail reasons and the deterministic cross-check result.
-- "What would change my mind" — the specific, observable events.
-- Position sizing if BUY (and why that size).
-- Links to every model directory and every artifact.
+You do **not** write `ANALYSIS.md` or `PROGRESS.md` yourself. Instead:
 
-Finally, update `<runDir>/PROGRESS.md` to mark the run COMPLETE with the decision.
-Return the structured decision (see `docs/SCHEMAS.md`).
+1. Write your decision record to `<runDir>/decision/_status.json` (decision,
+   conviction, the `gates` object, the valuation anchors, and any fatal flaws) so
+   the Progress Tracker can surface the final verdict.
+2. Return the **complete** structured decision (see `docs/SCHEMAS.md`). Completeness
+   matters: the orchestrator's **Analysis Scribe** renders the top-level
+   `<runDir>/ANALYSIS.md` from your verdict plus `SYNTHESIS.md` and `RED-TEAM.md`,
+   so anything you leave vague is vague in the deliverable. Make sure these are
+   decision-grade:
+   - `oneLiner` — the single-sentence thesis.
+   - `gates` — every gate's pass/fail, with the one-line reasons folded into `summary`.
+   - `valuation` — intrinsic-value range, current price, margin of safety, method.
+   - `whatWouldChangeMind` — specific, observable events.
+   - `positionSizing` — size and why (or "n/a"); `benchmarkComparison` — the
+     opportunity-cost call.
+
+Separating "decide" from "write the document" is deliberate: a reasoning agent
+constrained to return a schema kept handing the deliverable back as text instead
+of persisting it, so the orchestrator now owns that write (and refreshes
+`PROGRESS.md` afterward).
 
 Remember Munger's bar: *"Take a simple idea and take it seriously."* The simple
 idea here is that you only swing at the fat pitch — and you are allowed to stand

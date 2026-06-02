@@ -130,4 +130,6 @@ scenario should drive `survives: false` and block a BUY.
 
 The `gates` object must be consistent with the deterministic check in
 [`config/decision-rubric.js`](../config/decision-rubric.js); the Decision agent
-runs that file and reconciles divergences in `ANALYSIS.md`.
+runs that file and records divergences in its `summary`. The orchestrator's
+Analysis Scribe then renders `ANALYSIS.md` from this verdict plus `SYNTHESIS.md`
+and `RED-TEAM.md` — the Decision agent no longer writes the deliverable itself.

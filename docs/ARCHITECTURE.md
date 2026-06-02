@@ -88,7 +88,7 @@ synthesis math run without parsing prose. The schemas are documented in
 | Mental models | dossier | one verdict per model | `models/<key>/ANALYSIS.md` |
 | Synthesis | verdicts | weighted scorecard + lollapalooza | `synthesis/SYNTHESIS.md` |
 | Red team | synthesis + dossier | kill scenarios + CoC | `synthesis/RED-TEAM.md` |
-| Decision | synthesis + red team + rubric | BUY/PASS/SELL/TOO_HARD | `ANALYSIS.md` |
+| Decision | synthesis + red team + rubric | BUY/PASS/SELL/TOO_HARD verdict | `decision/_status.json` → **Analysis Scribe** writes `ANALYSIS.md` |
 
 ## Output layout
 
