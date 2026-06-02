@@ -1,0 +1,13 @@
+{
+  "agent": "red-team",
+  "phase": "synthesis",
+  "status": "complete",
+  "company": "Urban Outfitters, Inc.",
+  "ticker": "URBN",
+  "asOf": "2026-06-02",
+  "survives": true,
+  "circleOfCompetence": "in",
+  "killScenarioCount": 8,
+  "highPlausibilityRuinUnrebutted": false,
+  "outputPath": "runs/urban-outfitters-inc/2026-06-02/synthesis/RED-TEAM.md"
+}

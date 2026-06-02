@@ -1,0 +1,14 @@
+# URBN Capital Allocation History (what a retained dollar funded)
+# Sources: FY2026 10-K (year ended 2026-01-31) Item 5, MD&A Cash Flows, and Note 12 Shareholders' Equity,
+#   https://www.sec.gov/Archives/edgar/data/912615/000119312526137916/urbn-20260131.htm
+# Q1 FY2027 figures (qtr ended 2026-04-30) from the 10-K subsequent-events note and the Q1 release.
+# Dollars in USD millions unless noted. Dividends: NONE ever paid since IPO; none anticipated.
+Period,Capex_PP&E_$M,SharesRepurchased_OpenMkt,BuybackCost_$M,AvgBuybackPrice,Dividends_$M,Notes
+FY2024 (ended 2024-01-31),199.6,~0,~0,n/a,0,"Only payroll-tax-withholding retirements; no open-market buyback. Reinvestment-only year."
+FY2025 (ended 2025-01-31),182.6,1200000,52.3,43.55,0,"Buyback resumes modestly."
+FY2026 (ended 2026-01-31),260.2,3307781,153.9,46.54,0,"Buyback ~3x FY25; capex up to fund stores + fulfillment + home office expansion."
+Q1 FY2027 (qtr ended 2026-04-30),~part of $475M FY27 plan,4639208,300.0,64.67,0,"Aggressive buyback as stock pulled back to mid-$60s from low-$80s. 14,648,609 shares remained under 2019 authorization as of 2026-01-31."
+FY2027 plan (guidance),~475,TBD,TBD,n/a,0,"Capex guided ~$475M incl purchase of previously-leased Nuuly Raymore MO fulfillment center (Mar 2026). 57 new stores planned. May also repurchase shares."
+# Buyback authorization: 20,000,000 shares authorized 2019-06-04; 14,648,609 remaining as of 2026-01-31 (then ~4.64M used in Feb 2026 => ~10.0M remaining).
+# Share count trend (issued & outstanding): 92,281,748 (2025-01-31) -> 89,698,222 (2026-01-31 balance sheet) -> 88,423,626 (proxy 2026-03-11) -> 85,601,280 (10-K cover 2026-03-25, post-Feb buyback).
+# Balance sheet at 2026-04-30: $0 funded debt; cash $301.4M + marketable securities $349.5M; ~$1.2B operating-lease liabilities.
