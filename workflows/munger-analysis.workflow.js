@@ -246,6 +246,20 @@ const DECISION_SCHEMA = {
   },
 }
 
+// The Analysis Scribe confirms it persisted the top-level deliverable. `written`
+// is the contract: true ONLY if ANALYSIS.md is actually on disk.
+const ANALYSIS_WRITER_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['written', 'analysisPath'],
+  properties: {
+    written: { type: 'boolean', description: 'true ONLY if ANALYSIS.md was successfully written to disk' },
+    analysisPath: { type: 'string' },
+    sections: { type: 'array', items: { type: 'string' }, description: 'section headings written (sanity check)' },
+    notes: { type: 'string', description: 'any discrepancy between the verdict and a source file, or why a write failed' },
+  },
+}
+
 // ---------------------------------------------------------------------------
 // Prompt builders. Detailed mandates live in prompts/*.md; agents Read them so
 // this script stays the orchestration layer, not the content layer.
@@ -367,10 +381,29 @@ Process:
 2. Evaluate the GATES in order: Circle of Competence → No Fatal Flaw → Quality → Margin of Safety → Convergence/Lollapalooza. A failure at any gate caps the decision (see rubric).
 3. Cross-check your structured verdict against the deterministic gate function: run \`node config/decision-rubric.js\` with your numbers (the file documents how). Reconcile any divergence in writing.
 4. Only return BUY if it clears EVERY gate AND the high-conviction bar. State conviction 0-10. Be comfortable returning PASS or TOO_HARD — most analyses should.
-5. Write the top-level ${runDir}/ANALYSIS.md from templates/ANALYSIS.template.md: decision, conviction, one-liner, the thesis, the inverted/bear case, the model scorecard, valuation & margin of safety, what would change your mind, and links to every model directory and artifact.
-6. Update ${runDir}/PROGRESS.md to mark the run COMPLETE with the final decision.
+5. Write your decision record to ${runDir}/decision/_status.json (decision, conviction, gates, valuation anchors, fatalFlaws) so the Progress Tracker can surface the final verdict. Do NOT write the top-level ANALYSIS.md or edit PROGRESS.md — the orchestrator now persists the headline deliverable from your returned verdict (via a dedicated writer) and refreshes PROGRESS.md afterward, so ANALYSIS.md is reliable even when reasoning runs long.
 
 Return structured output per the decision schema.`
+
+const analysisWriterPrompt = (decision, synth, redteam) => `${header}
+You are the Analysis Scribe. Your ONLY job is to PERSIST the top-level deliverable ${runDir}/ANALYSIS.md. You do NOT re-decide or re-analyze — be a faithful transcriber of a verdict that has already been reached, and write (or overwrite) the file so it reflects the final call.
+
+The Portfolio Manager's final, AUTHORITATIVE verdict (structured JSON — treat as ground truth; never contradict or "improve" it):
+${JSON.stringify(decision, null, 2)}
+
+Synthesis summary (JSON): ${JSON.stringify(synth, null, 2)}
+Red Team summary (JSON): ${JSON.stringify(redteam, null, 2)}
+
+Do exactly this:
+1. Read templates/ANALYSIS.template.md for the required shape, plus ${runDir}/synthesis/SYNTHESIS.md and ${runDir}/synthesis/RED-TEAM.md for the narrative sections (read ${runDir}/research/DOSSIER.md only if you need a specific fact).
+2. Write ${runDir}/ANALYSIS.md, filling every <placeholder>:
+   - The header table, decision, conviction, one-liner, the gates table, valuation, and fatal flaws MUST match the verdict JSON verbatim.
+   - The model scorecard, convergence and lollapalooza come from SYNTHESIS.md; the bull-vs-bear table and risks come from RED-TEAM.md and the verdict's whatWouldChangeMind.
+   - Fill the Provenance section with links to synthesis/, research/DOSSIER.md, the models/ directories and artifacts/.
+3. Do NOT invent numbers or a different conclusion. If the verdict and a source file disagree, the verdict JSON wins — record the discrepancy in one line under notes.
+4. Verify the file exists on disk after writing.
+
+Return structured output per the schema; set written=true ONLY if ${runDir}/ANALYSIS.md is actually on disk.`
 
 // ---------------------------------------------------------------------------
 // A small progress agent regenerates PROGRESS.md from on-disk _status.json files
@@ -387,6 +420,32 @@ async function updateProgress(phaseName) {
     log(`progress update for "${phaseName}" failed (non-fatal): ${e}`)
     return null
   }
+}
+
+// ---------------------------------------------------------------------------
+// Policy: what to do when the Analysis Scribe fails to persist ANALYSIS.md.
+// This is a genuine judgment call — how hard should a run fail when only the
+// headline document is missing, given every other artifact and the verdict in
+// decision/_status.json already exist? Tune it here.
+// Default: one forceful retry, then a loud but NON-FATAL warning (the run still
+// succeeded; the deliverable can be rebuilt from the persisted artifacts).
+// Alternatives: drop the retry; or `throw` after the retry to fail the run hard.
+// ---------------------------------------------------------------------------
+async function persistAnalysis(decision, synth, redteam) {
+  const first = await agent(analysisWriterPrompt(decision, synth, redteam), {
+    label: 'analysis-writer', phase: 'Decision', schema: ANALYSIS_WRITER_SCHEMA,
+  })
+  if (first?.written) return first
+  log(`analysis-writer did not confirm a write (${first?.notes ?? 'no detail'}); retrying once...`)
+  const retry = await agent(
+    analysisWriterPrompt(decision, synth, redteam) +
+      '\n\nRETRY: the previous attempt left no ANALYSIS.md on disk. Write the file now and verify it exists before returning written=true.',
+    { label: 'analysis-writer:retry', phase: 'Decision', schema: ANALYSIS_WRITER_SCHEMA },
+  )
+  if (!retry?.written) {
+    log(`WARNING: ANALYSIS.md not persisted after retry. Verdict is in ${runDir}/decision/_status.json; rebuild the deliverable from SYNTHESIS.md + RED-TEAM.md.`)
+  }
+  return retry ?? first
 }
 
 // ===========================================================================
@@ -434,8 +493,16 @@ log(`Thesis ${redteam?.survives ? 'SURVIVES' : 'FAILS'} the pre-mortem · circle
 
 phase('Decision')
 const decision = await agent(decisionPrompt(synth, redteam), { label: 'decision', phase: 'Decision', schema: DECISION_SCHEMA })
-await updateProgress('Decision')
 log(`DECISION: ${decision?.decision} · conviction ${decision?.conviction}/10 — ${decision?.oneLiner ?? ''}`)
+
+// Persist the headline deliverable via a dedicated scribe. The orchestration
+// sandbox has no filesystem access, so ANALYSIS.md can only be written by an
+// agent; keeping that OFF the Decision agent (busy reasoning + returning a
+// schema) is what stops the top-level document from silently going missing.
+const analysisWrite = await persistAnalysis(decision, synth, redteam)
+log(`ANALYSIS.md ${analysisWrite?.written ? 'persisted' : 'NOT persisted — see warning above'} → ${runDir}/ANALYSIS.md`)
+
+await updateProgress('Decision')
 
 return {
   company: label,
@@ -447,5 +514,6 @@ return {
   conviction: decision?.conviction,
   oneLiner: decision?.oneLiner,
   analysisPath: `${runDir}/ANALYSIS.md`,
+  analysisWritten: analysisWrite?.written ?? false,
   counts: { lanes: digests.length, models: verdicts.length, fatalFlaws: fatals.length },
 }
